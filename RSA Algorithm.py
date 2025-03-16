@@ -42,7 +42,7 @@ def generate_keys():
     e = find_valid_e(phi_n)  # Get a valid e
     d = mod_inverse(e, phi_n)  # Compute modular inverse of e mod φ(n)
 
-    return {e, n}, [d, p, q]  # Public key: {e, n}, Private key: [d, p, q]
+    return (e, n), (d, p, q)  # Public key: {e, n}, Private key: [d, p, q]
 
 
 def encrypt(message, public_key):
